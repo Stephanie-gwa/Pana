@@ -1,0 +1,58 @@
+<ion-header [translucent]="true" class="ion-no-border ion-padding">
+  <ion-list>
+    <ion-list-header class="ion-padding-top">
+      <ion-label color="primary" class="ion-text-center">
+        <h1>Personal Info</h1>
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item-group class="ion-margin-horizontal">
+      <form [formGroup]="form">
+
+        <div class="ion-margin-vertical">
+          <ion-item class="ion-margin">
+            <ion-input 
+              formControlName="fullname" 
+              placeholder="First Name" 
+              type="text"
+              minlength="1"
+              maxlength="200">
+            </ion-input>
+          </ion-item>
+
+          <ion-item class="ion-margin">
+            <ion-input 
+              formControlName="lastname" 
+              placeholder="Last Name" 
+              type="text"
+              minlength="1"
+              maxlength="200">
+            </ion-input>
+          </ion-item>
+
+          <ion-item class="ion-margin">
+            <ion-input 
+              formControlName="email" 
+              placeholder="Your Email" 
+              type="email" 
+              minlength="1"
+              maxlength="200">
+            </ion-input>
+          </ion-item>
+        </div>
+
+      </form>
+
+      <ion-button size="large" type="submit" [disabled]="!form.valid" color="primary" (click)="signIn()" expand="block">
+        Continue
+        <ion-icon color='light' slot="end" name="arrow-forward"></ion-icon>
+      </ion-button>
+
+    </ion-item-group>
+  </ion-list>
+</ion-header>
+
+<ion-content class="ion-no-border">
+  <ion-list class="ion-no-padding" lines="none">
+  </ion-list>
+</ion-content>
